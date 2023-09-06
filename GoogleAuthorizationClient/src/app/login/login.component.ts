@@ -1,4 +1,5 @@
 import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -9,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private socialAuthService: SocialAuthService) {
+  constructor(private socialAuthService: SocialAuthService, private httpClient: HttpClient) {
     this.socialAuthService.authState.subscribe((user: SocialUser) => {
-      console.log(user);
+      httpClient.post("https://localhost:7088/api/auth/", user).subscribe(token => console.log(token))
     });
   }
 

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './login/login.component';
-import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
-    GoogleSigninButtonModule,
     HttpClientModule
   ],
   providers: [
